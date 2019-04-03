@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.wifinder.model.dao.backend;
 
 
+import edu.cnm.deepdive.wifinder.model.entity.backend.Review;
 import edu.cnm.deepdive.wifinder.model.entity.backend.Reviewer;
 import java.util.List;
 import java.util.UUID;
@@ -8,9 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface ReviewerRepository extends CrudRepository<Reviewer, UUID> {
 
-  List<Reviewer> findAllByOrderByNameAsc();
-
-  List<Reviewer> findAllByNameContainingOrderByNameAsc(String fragment);
+  List<Reviewer> findAllByReviewsContains(Review review);
 }
 
 

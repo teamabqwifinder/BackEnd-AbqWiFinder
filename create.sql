@@ -1,0 +1,15 @@
+create table location (location_id CHAR(16) FOR BIT DATA not null, address varchar(4096) not null, googlemap varchar(4096) not null, latitude varchar(4096) not null, longitude varchar(4096) not null, pictures varchar(4096) not null, primary key (location_id))
+create table review (review_id CHAR(16) FOR BIT DATA not null, created timestamp not null, photos varchar(4096) not null, text varchar(4096) not null, location_id CHAR(16) FOR BIT DATA, reviewer_id CHAR(16) FOR BIT DATA, primary key (review_id))
+create table reviewer (reviewer_id CHAR(16) FOR BIT DATA not null, age varchar(4096) not null, name varchar(4096) not null, reviewstatus varchar(4096) not null, primary key (reviewer_id))
+alter table location add constraint UK_ltij63d2oq8xj94dgd3rkyuuh unique (address)
+alter table location add constraint UK_fra02dsxyqh1d4kwcu8xjq0ca unique (googlemap)
+alter table location add constraint UK_qhlnshl5t27grwa2fk6bfqe3t unique (latitude)
+alter table location add constraint UK_bcr8nmifuuq1o0839d3qk40cm unique (longitude)
+alter table location add constraint UK_8fk5kpvjtkg9fl4g2aesnuy9o unique (pictures)
+alter table review add constraint UK_898htm32t51kmmnhy1swi2hlc unique (photos)
+alter table review add constraint UK_eivbe008ps7jotqjasrgoy9jk unique (text)
+alter table reviewer add constraint UK_c4l2y8t9fn57awuxikdatfl12 unique (age)
+alter table reviewer add constraint UK_pu5g53rmksqenss2ay2foj8vg unique (name)
+alter table reviewer add constraint UK_hysgw0qb07lkxtj96qjqrjj6f unique (reviewstatus)
+alter table review add constraint FKovg68g8e47jyi8fn7jpauseyx foreign key (location_id) references location
+alter table review add constraint FKag25ofikrsv5sujkbnlbaud4v foreign key (reviewer_id) references reviewer

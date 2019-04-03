@@ -1,12 +1,10 @@
 package edu.cnm.deepdive.wifinder.model.entity.backend;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import edu.cnm.deepdive.wifinder.model.view.FlatReview;
 import edu.cnm.deepdive.wifinder.model.view.FlatReviewer;
 import java.net.URI;
-import java.util.Date;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -17,19 +15,15 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OrderBy;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-import org.hibernate.annotations.CreationTimestamp;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.hateoas.EntityLinks;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 
-@JsonIgnoreProperties(value = {"created","quotes","href"}, allowGetters = true,ignoreUnknown = true)
+@JsonIgnoreProperties(value = {"created","quotes","href","reviews"}, allowGetters = true,ignoreUnknown = true)
 @Component
 @Entity
 
@@ -57,16 +51,11 @@ public class Reviewer implements FlatReviewer {
   @Column(length = 4096, nullable = false, unique = true)
   private String reviewstatus;
 
-
-  @JsonSerialize(contentAs = FlatReviewer.class)
-  @ManyToMany(fetch = FetchType.LAZY,
-      cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-  @JoinTable(joinColumns = @JoinColumn(name = "review_id"),
-      inverseJoinColumns = @JoinColumn(name = "reviewer_id"))
-
-
-  @OrderBy("text ASC")
-  private Set<Review> reviews = new LinkedHashSet<>();
+  @JsonIgnore
+  @OneToMany(fetch = FetchType.LAZY,
+      cascade = {CascadeType.DETACH})
+  @JoinColumn(name = "reviewer_id")
+  private Set<Review> reviews;
 
   public static EntityLinks getEntityLinks() {
     return entityLinks;

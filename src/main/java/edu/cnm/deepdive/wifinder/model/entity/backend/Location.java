@@ -20,6 +20,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.hateoas.EntityLinks;
@@ -65,16 +66,9 @@ public class Location implements FlatLocation {
   @Column(length = 4096, nullable = false, unique = true)
   private String pictures;
 
-
-
-    @JsonSerialize(contentAs = FlatReviewer.class)
-    @ManyToMany(fetch = FetchType.LAZY,
-        cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinTable(joinColumns = @JoinColumn(name = "review_id"),
-        inverseJoinColumns = @JoinColumn(name = "location_id"))
-
-
-    @OrderBy("text ASC")
+    @OneToMany(fetch = FetchType.LAZY,
+        cascade = {CascadeType.REMOVE})
+    @JoinColumn(name = "location_id")
     private Set<Review> reviews = new LinkedHashSet<>();
 
     public static EntityLinks getEntityLinks() {

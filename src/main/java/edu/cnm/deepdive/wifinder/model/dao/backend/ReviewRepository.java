@@ -1,6 +1,7 @@
 package edu.cnm.deepdive.wifinder.model.dao.backend;
 
 
+import edu.cnm.deepdive.wifinder.model.entity.backend.Location;
 import edu.cnm.deepdive.wifinder.model.entity.backend.Review;
 import edu.cnm.deepdive.wifinder.model.entity.backend.Reviewer;
 import java.util.List;
@@ -11,9 +12,7 @@ import org.springframework.data.repository.CrudRepository;
 public interface ReviewRepository extends CrudRepository<Review, UUID> {
 
 
-  List<Review> findAllByTextContainingOrderByTextAsc(String fragment);
-
-  List<Review> findAllByOrderByTextAsc();
+  List<Review> findAllByLocation(Location location);
 
 }
 
