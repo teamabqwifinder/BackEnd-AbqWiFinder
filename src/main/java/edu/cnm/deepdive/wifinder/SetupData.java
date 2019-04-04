@@ -2,6 +2,9 @@ package edu.cnm.deepdive.wifinder;
 
 
 import com.fasterxml.jackson.databind.MappingIterator;
+import com.fasterxml.jackson.dataformat.csv.CsvMapper;
+import com.fasterxml.jackson.dataformat.csv.CsvParser;
+import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import edu.cnm.deepdive.wifinder.model.dao.backend.LocationRepository;
 import edu.cnm.deepdive.wifinder.model.entity.backend.Location;
 import java.io.File;
@@ -34,7 +37,7 @@ public class SetupData {
 
   public void setupStars() {
 
-    List<Location> locations = loadObjectList(Location.class, "raw/hygdata_v3.csv");
+    List<Location> locations = loadObjectList(Location.class, "raw/locations.csv");
 
     locationRepository.saveAll(locations);
 
