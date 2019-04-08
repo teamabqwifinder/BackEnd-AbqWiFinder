@@ -29,10 +29,10 @@ public class LocationController {
     return locationRepository.findAll();
   }
 
-  @RequestMapping(value = "/Image/{id:.+}", method = RequestMethod.GET)
-  public ResponseEntity<byte[]> getImage(@PathVariable("id") String id) {
-    byte[] picture = imageService.getPicture(id);
-    return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(picture);
-  }
+//  @RequestMapping(value = "/Image/{id:.+}", method = RequestMethod.GET)
+//  public ResponseEntity<byte[]> getImage(@PathVariable("id") String id) {
+//    byte[] picture = imageService.getPicture(id);
+//    return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(picture);
+//  }
 
 }
