@@ -1,5 +1,5 @@
 id, googlemap, address, longitude, latitude, pictures
-3ca2edda-9e66-48e7-b366-6cb1b54ab7ba, 1, 1, 3232 Central Avenue , 100, 1
+3ca2edda-9e66-48e7-b366-6cb1b54ab7ba, 1, 3232 Central Avenue , 100, 500, 1
 acbd1739-f106-46e4-88bb-ae0e5a997cbf, 2, 5436 Wyoming Blvd, 150, 120, 2
 8a645314-b7ce-4889-a0ec-dc75197ff31a, 3, 3235 First Avenue , 105, 104, 3
 53e80fb4-6007-4267-9f4e-453dc99191f7, 4, 5436 2nd Street , 145, 124, 4
@@ -24,7 +24,3 @@ ebcff9ce-6aca-4419-b090-36ee667b2a49, 22, 54 Lala Blvd, 198, 145, 22
 1b26ea43-b945-4e97-8057-11f5cf72cf26, 23, 5 Blake Avenue , 200, 300,23
 0180b9b1-3037-4714-9d1e-2c767e60f7fc, 24,  45 Salad Blvd, 145, 345, 24
 a4f1b429-0737-4ee1-a2a5-5d9f473a0aac, 25,  450 Crown Blvd, 199, 345, 25
-
-
-
-

@@ -13,6 +13,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -38,8 +39,11 @@ public class SetupData {
   public void setupStars() {
 
     List<Location> locations = loadObjectList(Location.class, "raw/locations.csv");
-
-    locationRepository.saveAll(locations);
+    try {
+      locationRepository.saveAll(locations);
+    }catch (DataIntegrityViolationException e){
+      e.printStackTrace();
+    }
 
     LOG.debug("Finished Loading Data");
 

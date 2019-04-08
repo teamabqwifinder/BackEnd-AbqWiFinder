@@ -12,10 +12,10 @@
   </parent>
 
   <groupId>edu.cnm.deepdive</groupId>
-  <artifactId>qod</artifactId>
+  <artifactId>wifinderbackend</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>Quote of the Day Service</name>
-  <description>Quote of the Day Spring Boot application</description>
+  <name>WiFinder Backend Service</name>
+  <description>WiFinder Backend Service Spring Boot application</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -104,6 +104,11 @@
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client</artifactId>
       <version>1.28.0</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
 
   </dependencies>

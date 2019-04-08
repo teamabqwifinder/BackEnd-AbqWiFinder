@@ -28,10 +28,11 @@ import org.springframework.stereotype.Component;
 
 
 
-
-  /**
+/**
+*
    * Implements authentication verification using Google OAuth2.
    */
+
   @Component
   public class GoogleTokenServices implements ResourceServerTokenServices {
 

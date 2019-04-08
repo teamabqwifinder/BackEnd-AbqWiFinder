@@ -55,11 +55,11 @@ public class Location implements FlatLocation {
     private String address;
 
     @NonNull
-    @Column(length = 4096, nullable = false, unique = true)
+    @Column(length = 4096, nullable = false)
     private String latitude;
 
   @NonNull
-  @Column(length = 4096, nullable = false, unique = true)
+  @Column(length = 4096, nullable = false)
   private String longitude;
 
   @NonNull
