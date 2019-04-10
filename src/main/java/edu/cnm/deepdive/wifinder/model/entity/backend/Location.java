@@ -27,6 +27,10 @@ import org.springframework.hateoas.EntityLinks;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
+/**
+ *Defines a database entity and REST resource representing the text of a location, and its
+ *relationships to zero or more {@link Review} resources.
+ */
 
 @JsonIgnoreProperties(value = {"created","quotes","href"}, allowGetters = true,ignoreUnknown = true)
 @Component
@@ -111,6 +115,11 @@ public class Location implements FlatLocation {
   public void setAddress(@NonNull String address) {
     this.address = address;
   }
+
+  /**
+   * Returns latitude of location
+   * @return latitude
+   */
 
   @Override
   @NonNull

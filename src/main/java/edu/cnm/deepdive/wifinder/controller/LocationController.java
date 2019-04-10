@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ *Defines REST endpoints for servicing requests on {@link edu.cnm.deepdive.wifinder.model.entity.backend.Review}
+ * resources, invoking {@link LocationRepository} methods to perform the required operations.
+ */
+
 @RestController
 @ExposesResourceFor(Location.class)
 @RequestMapping("/locations")
@@ -29,10 +34,6 @@ public class LocationController {
     return locationRepository.findAll();
   }
 
-//  @RequestMapping(value = "/Image/{id:.+}", method = RequestMethod.GET)
-//  public ResponseEntity<byte[]> getImage(@PathVariable("id") String id) {
-//    byte[] picture = imageService.getPicture(id);
-//    return ResponseEntity.ok().contentType(MediaType.IMAGE_JPEG).body(picture);
-//  }
+
 
 }

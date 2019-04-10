@@ -1,7 +1,7 @@
 ----------------------------------------------------------------
-Mon Apr 08 16:17:58 MDT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0169-ff07-8784-0000045aa4f8 
-on database directory C:\Users\fclbe\Desktop\bootcamp\projects\wifinderbackEnd\wifi_db with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Tue Apr 09 13:20:45 MDT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016a-038b-a4bb-000006bc3ca0 
+on database directory C:\Users\fclbe\Desktop\bootcamp\projects\wifinderbackEnd\wifi_db with class loader sun.misc.Launcher$AppClassLoader@42a57993 
 Loaded from file:/C:/Users/fclbe/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_191-b12

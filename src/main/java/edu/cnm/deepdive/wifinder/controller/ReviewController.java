@@ -9,6 +9,12 @@ import org.springframework.hateoas.ExposesResourceFor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ *Defines REST endpoints for servicing requests on {@link ExposesResourceFor}
+ * resources, invoking {@link LocationRepository} methods to perform the required operations.
+ */
+
 @RestController
 @ExposesResourceFor(Review.class)
 @RequestMapping("/sources")
