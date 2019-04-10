@@ -7,8 +7,16 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.data.repository.CrudRepository;
 
+/**
+ * Declares database operations that can be performed on {@link Location} entity instances.
+ */
 public interface LocationRepository extends CrudRepository<Location, UUID> {
 
+  /**
+   * Selects and returns selected {@link Location} instance.
+   *
+   * @return random {@link Location} instance.
+   */
   List<Location> findTop10ByOrderByAddress();
 
 }

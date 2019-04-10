@@ -16,6 +16,8 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
+
+
 @Component
 public class SetupData {
 
@@ -49,15 +51,7 @@ public class SetupData {
 
   }
 
-  /**
-   * Creates the CSVSchema based on first “header” row. The implementation is generic enough to
-   * handle any type of object. If any error occurs, an empty list will be returned.
-   *
-   * @param type data type to be loaded
-   * @param fileName name of the data file
-   * @param <T> Generic type parameter to allow DataBasePopulator to be inputted.
-   * @return Returns a type-safe empty, immutable {@link List}
-   */
+
   public <T> List<T> loadObjectList(Class<T> type, String fileName) {
     try {
       CsvSchema bootstrapSchema = CsvSchema.emptySchema().withHeader();

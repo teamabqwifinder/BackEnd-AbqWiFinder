@@ -68,6 +68,9 @@ public class Review implements FlatReview {
 //  @ManyToMany(fetch = FetchType.LAZY, mappedBy = "reviews",
 //      cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH});
 
+  /**
+   * Many to many relation between review and locations
+   */
   @ManyToOne
   @JsonIgnore
   @JoinColumn(name = "location_id")
@@ -94,17 +97,32 @@ public class Review implements FlatReview {
     this.id = id;
   }
 
+  /**
+   *
+   * return locations user searched for
+   * @return reviews
+   */
+
   @Override
   @NonNull
   public Date getCreated() {
     return created;
   }
 
+  /**
+   * returns name of user
+   * @return
+   */
   @Override
   public String getName() {
     return null;
   }
 
+  /**
+   *
+   * returns URI for locations
+   * @return uri
+   */
   @Override
   public URI getHref() {
     return null;

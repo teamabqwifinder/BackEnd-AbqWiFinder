@@ -26,6 +26,10 @@ public class ReviewerController {
       this.locationRepository = locationRepository;
     }
 
+    /**
+     * returns find all locations
+     * @return locationRepository
+     */
     @GetMapping
     public Iterable<Location> getLocations(){
       return locationRepository.findAll();

@@ -22,6 +22,10 @@ import org.springframework.hateoas.EntityLinks;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
+/**
+ *Defines a database entity and REST resource representing the text of a reviewr, and its
+ *relationships to zero or more {@link Location} resources.
+ */
 
 @JsonIgnoreProperties(value = {"created","quotes","href","reviews"}, allowGetters = true,ignoreUnknown = true)
 @Component
@@ -43,6 +47,9 @@ public class Reviewer implements FlatReviewer {
   @Column(length = 4096, nullable = false, unique = true)
   private String age;
 
+  /**
+   * creates column for name
+   */
   @NonNull
   @Column(length = 4096, nullable = false, unique = true)
   private String name;
@@ -88,6 +95,10 @@ public class Reviewer implements FlatReviewer {
     return name;
   }
 
+  /**
+   * returns uri
+   * @return
+   */
   @Override
   public URI getHref() {
     return null;
@@ -106,6 +117,10 @@ public class Reviewer implements FlatReviewer {
     this.reviewstatus = reviewstatus;
   }
 
+  /**
+   * returns reviews
+   * @return
+   */
   public Set<Review> getReviews() {
     return reviews;
   }

@@ -131,6 +131,10 @@ public class Location implements FlatLocation {
     this.latitude = latitude;
   }
 
+  /**
+   * returns longitude
+   * @return longitude
+   */
   @NonNull
   public String getLongitude() {
     return longitude;
@@ -140,6 +144,11 @@ public class Location implements FlatLocation {
     this.longitude = longitude;
   }
 
+  /**
+   *
+   * Returns pictures of locatiions
+   * @return pictures
+   */
   @Override
   @NonNull
   public String getPictures() {
