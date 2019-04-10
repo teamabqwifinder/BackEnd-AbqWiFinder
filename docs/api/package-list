@@ -1,0 +1,6 @@
+edu.cnm.deepdive.wifinder
+edu.cnm.deepdive.wifinder.controller
+edu.cnm.deepdive.wifinder.model.dao.backend
+edu.cnm.deepdive.wifinder.model.entity.backend
+edu.cnm.deepdive.wifinder.model.view
+edu.cnm.deepdive.wifinder.service
