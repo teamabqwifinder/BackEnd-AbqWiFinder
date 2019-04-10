@@ -97,7 +97,7 @@ public class Reviewer implements FlatReviewer {
 
   /**
    * returns uri
-   * @return
+   * @return uri
    */
   @Override
   public URI getHref() {
@@ -119,7 +119,7 @@ public class Reviewer implements FlatReviewer {
 
   /**
    * returns reviews
-   * @return
+   * @return reviews
    */
   public Set<Review> getReviews() {
     return reviews;

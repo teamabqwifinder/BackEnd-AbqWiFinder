@@ -25,6 +25,4 @@ public class ReviewController {
   private ReviewerRepository reviewerRepository;
   private LocationRepository locationRepository;
 
-
-
 }
